@@ -1,11 +1,26 @@
+/**
+ * @file BinarySearchTreeNode.hpp
+ * @version 1.0
+ * @title BinarySearchTreeNode
+ * @author Jabari Dash
+ * @brief Node in linked binary search tree
+ * @date 05/31/2017
+ * @code
+  int main() {
+
+    // Code example
+    std::cout << "Hello World" << std::endl;
+
+    return 0;
+  }
+ * @endcode
+ */
+
 #ifndef BINARY_SEARCH_TREE_NODE
 #define BINARY_SEARCH_TREE_NODE
 
-#include "DataType.hpp" // DataType
+#include "DataType.hpp"    // DataType<T>
 
-/**
-* Node in BinarySearchTree
-*/
 template <class T> class BinarySearchTreeNode: public DataType<T> {
   public:
     // Attributes
@@ -14,17 +29,26 @@ template <class T> class BinarySearchTreeNode: public DataType<T> {
     BinarySearchTreeNode<T>* right_child;
 
     // Constructor
+
+    /**
+     * @brief Constructs a tree node
+     * @param element The value of that the node will hold.
+     * @param p Pointer to parent node.
+     */
     BinarySearchTreeNode(T element, BinarySearchTreeNode<T>* p);
 
     // Instance methods
+
+    /**
+     * @brief Inserts an element into the tree.
+     * @param element The element to be inserted into the list.
+     * @return Bool value that indicates whether or not the element was successfully inserted.
+     */
     bool insert(T element);
 };
 
 //------------------------------------------------------------------------------
 
-/**
-* Constructs a node
-*/
 template <class T> BinarySearchTreeNode<T>::BinarySearchTreeNode(T element, BinarySearchTreeNode<T>* p) {
   parent = p;
   left_child = NULL;
@@ -54,6 +78,7 @@ template <class T> bool BinarySearchTreeNode<T>::insert(T element) {
       // Otherwise, attempt to insert one level lower, going left
     } else {
 
+      // Recursive call to insert into left child
       return left_child->insert(element);
     }
 
@@ -70,9 +95,10 @@ template <class T> bool BinarySearchTreeNode<T>::insert(T element) {
       // Otherwise, attempt to insert one level lower, going right
     } else {
 
+      // Recursive call to insert into right child
       return right_child->insert(element);
     }
   }
 }
 
-#endif
+#endif // BINARY_SEARCH_TREE_NODE_H

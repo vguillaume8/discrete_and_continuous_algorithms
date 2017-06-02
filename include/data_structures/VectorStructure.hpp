@@ -1,29 +1,96 @@
+/**
+ * @file VectorStructure.hpp
+ * @version 1.0
+ * @title VectorStructure
+ * @author Jabari Dash
+ * @brief Interface from which all data structures that are based on vectors (arrays) shall implement.
+ * @date 05/31/2017
+ * @code
+  int main() {
+
+    // Code example
+    std::cout << "Hello World" << std::endl;
+
+    return 0;
+  }
+ * @endcode
+ */
+
 #ifndef VECTOR_STRUCTURE_H
 #define VECTOR_STRUCTURE_H
 
-#include <stdlib.h>
-#include <string>
-#include "../util/util.hpp"
-#include "DataStructure.hpp"
+#include <string>               // std::to_string()
+#include "DataStructure.hpp"    // DataStructure<T>
+#include "../util/util.hpp"     // util::to_string(std::vector<T>)
 
 template <class T> class VectorStructure: public DataStructure<T> {
   public:
     // Abstract methods from DataStructure to implement
+
+    /**
+     * @brief Indicates whether the data structure contains a specified element.
+     * @param element Specified element to check for.
+     * @return True if the structure contains the specified element, otherwise false.
+     */
     bool contains(T t);
+
+    /**
+     * @brief Returns a printable string representation of the underlying vector
+     * @return String representation of the vector
+     */
     std::string to_string();
+
+    /**
+     * @brief Returns the underlying vector of elements.
+     * @return Underlying vector.
+     */
     std::vector<T> to_vector();
+
+    /**
+     * @brief Returns the first element in the vector.
+     * @return Element at index 0 of the vector.
+     */
     T peek();
+
+    /**
+     * @brief Calls std::vector<T>.pop_back(), and decrements the length of the DataStructure by 1.
+     * @return Boolean value that indicates that the operation was either successful or not.
+     */
     bool pop_back();
+
+    /**
+     * @brief Calls std::vector<T>.push_back(element), and increments the length of the DataStructure by 1.
+     * @return Boolean value that indicates that the operation was either successful or not.
+     */
     bool push_back(T element);
 
   protected:
     // Attributes
+
+    /** @brief Underlying vector in which the elements will be stored. */
     std::vector<T> elements;
+
+    /** @brief Upon searching for an element by index, -1 is returned if the specified element is not found. */
     static const int ELEMENT_NOT_FOUND = -1;
+
+    /** @brief Name of class. */
     static const std::string CLASS_NAME;
 
     // Instance methods
-    int find(T t);
+
+    /**
+     * @brief Finds a specified element in the underlying vector.
+     * @param element Specified element to search for.
+     * @return Index of the specified element
+     */
+    int find(T element);
+
+    /**
+     * @brief Swaps the elements at two specified indicies.
+     * @param index_a First specified element.
+     * @param index_b Second specified element.
+     * @return
+     */
     bool swap(int index_a, int index_b);
 };
 
@@ -31,9 +98,6 @@ template <class T> const std::string VectorStructure<T>::CLASS_NAME = "VectorStr
 
 //------------------------------------------------------------------------------
 
-/*
-* Swaps two elements in vector
-*/
 template <class T> bool VectorStructure<T>::swap(int index_a, int index_b) {
   int n = DataStructure<T>::size();
   std::string message;

@@ -1,22 +1,71 @@
+/**
+ * @file Pair.hpp
+ * @version 1.0
+ * @title Pair
+ * @author Jabari Dash
+ * @brief Pair is to be extended by classes such as 2 Dimensional Cartesian (x, y) pairs, or Edges in Graphs.
+ * @date 05/31/2017
+ * @code
+  int main() {
+
+    // Code example
+    std::cout << "Hello World" << std::endl;
+
+    return 0;
+  }
+ * @endcode
+ */
+
 #ifndef PAIR_H
 #define PAIR_H
 
-#include <string>
-#include <sstream>
+#include <string>    // std::string
+#include <sstream>   // std::ostringstream
 
 template <class T> class Pair {
   public:
+
+    /** @brief First element. */
     T x;
+
+    /** @brief Seconds element. */
     T y;
 
+    /**
+     * @brief Constructs a pair of two elements.
+     * @param i First element.
+     * @param j Second element.
+     */
     Pair(T i, T j);
 
+    /**
+     * @brief Get first element.
+     * @return First element.
+     */
     T get_x();
-    T get_y();
-    void set_x(T t);
-    void set_y(T t);
 
-    // Override
+    /**
+     * @brief Get second element.
+     * @return Second element.
+     */
+    T get_y();
+
+    /**
+     * @brief Set first element.
+     * @param i Value that will be stored into first element.
+     */
+    void set_x(T i);
+
+    /**
+     * @brief Set second element.
+     * @param j Value that will be stored into second element.
+     */
+    void set_y(T j);
+
+    /**
+     * @brief Returns printable string.
+     * @return String representation of pair.
+     */
     std::string to_string();
 };
 
@@ -56,9 +105,6 @@ template <class T> void Pair<T>::set_y(T t) {
 
 //------------------------------------------------------------------------------
 
-/*
-* Return pair as string
-*/
 template <class T> std::string Pair<T>::to_string() {
   std::ostringstream out_string_stream;
   std::string str;
@@ -73,12 +119,9 @@ template <class T> std::string Pair<T>::to_string() {
 
 //------------------------------------------------------------------------------
 
-/*
-* Operator overload
-*/
 template <class T> std::ostream& operator<<(std::ostream& o, Pair<T>& pair) {
    o << pair.to_string();
    return o;
 }
 
-#endif
+#endif // PAIR_H

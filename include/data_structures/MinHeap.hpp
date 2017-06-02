@@ -1,5 +1,23 @@
-#ifndef MAX_HEAP_H
-#define MAX_HEAP_H
+/**
+ * @file MinHeap.hpp
+ * @version 1.0
+ * @title MinHeap
+ * @author Jabari Dash
+ * @brief Implementation of a min heap / priority queue with higher priority to loweer values.
+ * @date 05/31/2017
+ * @code
+  int main() {
+
+    // Code example
+    std::cout << "Hello World" << std::endl;
+
+    return 0;
+  }
+ * @endcode
+ */
+
+#ifndef MIN_HEAP_H
+#define MIN_HEAP_H
 
 #include <string>           // std::string
 #include <vector>           // std::vector<T>
@@ -11,18 +29,55 @@
 template <class T> class MinHeap: public BinaryTree<T> {
   public:
     // Constructors
+
+    /**
+     * @brief Constructs an empty heap.
+     */
     MinHeap();
+
+    /**
+     * @brief Constructs a heap from the passed vector.
+     * @param vect Vector of values that will populate the heap.
+     */
     MinHeap(std::vector<T> array);
 
-    // Abstract methods to implement
+// Abstract methods to implement
+//------------------------------------------------------------------------------
+    /**
+     * @brief Inserts a specified element into the data structure.
+     * @param element Specified element to be inserted.
+     * @return Boolean value indicating whether or not the element was successfully inserted.
+     */
     bool insert(T element);
+
+//------------------------------------------------------------------------------
+
+    /**
+     * @brief Indicates whether or not the data structure is empty.
+     * @return True if the structure has 0 elements, otherwise false.
+     */
     bool remove(T element);
+
+//------------------------------------------------------------------------------
+
+    /**
+     * @brief Returns and removes the first element of the structure.
+     * @return Value at the root of the structure.
+     */
     T poll();
 
-    // Static methods
+// Static methods
+//------------------------------------------------------------------------------
+    /**
+     * @brief Bubble sorts a LinkedList
+     * @param linked_list List to be sorted.
+     * @return Returns a LinkedList sorted in ascending order.
+     */
     static std::vector<T> sort(std::vector<T> array);
 
   protected:
+
+    /** @brief Name of class. */
     static const std::string CLASS_NAME;
 
   private:
@@ -197,4 +252,4 @@ template <class T> std::vector<T> MinHeap<T>::sort(std::vector<T> array) {
   return array;
 }
 
-#endif
+#endif // MIN_HEAP_H

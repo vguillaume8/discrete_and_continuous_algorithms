@@ -1,3 +1,21 @@
+/**
+ * @file Graph.hpp
+ * @version 1.0
+ * @title Graph
+ * @author Jabari Dash
+ * @brief Weighted Graph.
+ * @date 05/31/2017
+ * @code
+  int main() {
+
+    // Code example
+    std::cout << "Hello World" << std::endl;
+
+    return 0;
+  }
+ * @endcode
+ */
+
 #ifndef GRAPH_H
 #define GRAPH_H
 
@@ -11,16 +29,47 @@
 
 template <class T, class M> class Graph {
   public:
+
+    /** @brief Sum of weights of all edges. */
     T weight;
 
+    /** @brief Vector of edges in the graph. */
     std::vector< Edge<T,M> > edges;
+
+    /** @brief Vector of verticies in the graph. */
     std::vector< Vertex<M> > verticies;
 
+    /**
+     * @brief Constructs a new weighted graph from a vector of edges, and a vector of verticies.
+     * @param edges Vector of edges.
+     * @param verticies Vector of verticies.
+     */
     Graph(std::vector< Edge<T,M> > edges, std::vector< Vertex<M> > verticies);
 
+    /**
+     * @brief Returns the weight of the graph.
+     * @return The overall weight of the graph.
+     */
     T get_weight();
+
+    /**
+     * @brief Determines if the graph is connected or not.
+     * @return True if connected, else false.
+     */
     bool is_connected();
+
+    /**
+     * @brief Determines if the graph contains a specified edge.
+     * @param edge Edge to search for.
+     * @return True if the graph contains it, else false.
+     */
     bool contains_edge(Edge<T,M> edge);
+
+    /**
+     * @brief Determines if the graph contains a specified vertex.
+     * @param vertex Vertex to search for.
+     * @return True if the graph contains it, else false.
+     */
     bool contains_vertex(Vertex<T> vertex);
 };
 

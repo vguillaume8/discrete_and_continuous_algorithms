@@ -48,4 +48,4 @@ template <typename T> int binary_search_recursive(T x, T* a, int l, int r) {
 	}
 }
 
-#endif
+#endif // BINARY_SEARCH_H

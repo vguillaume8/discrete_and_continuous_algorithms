@@ -1,3 +1,21 @@
+/**
+ * @file Stack.hpp
+ * @version 1.0
+ * @title Stack
+ * @author Jabari Dash
+ * @brief Implementation of a vector based stack.
+ * @date 05/31/2017
+ * @code
+  int main() {
+
+    // Code example
+    std::cout << "Hello World" << std::endl;
+
+    return 0;
+  }
+ * @endcode
+ */
+
 #ifndef STACK_H
 #define STACK_H
 
@@ -9,18 +27,58 @@
 template <class T> class Stack: public VectorStructure<T> {
   public:
     // Stack instance methods
+
+    /**
+     * @brief Pushes a specified element onto the top of the Stack.
+     * @param element Specified element.
+     * @return Boolean value that indicates whether or not the operation was successful.
+     */
     bool push(T element);
+
+    /**
+     * @brief Removes and returns the element at the top of the stack.
+     * @return Boolean value that indicates whether or not the operation was successful.
+     */
     T pop();
+
+    /**
+     * @brief Returns the element at the top of the stack without removing it.
+     * @return Boolean value that indicates whether or not the operation was successful.
+     */
     T top();
 
     // Abstract methods from DataStructure to implement
-    bool insert(T t);
-    bool remove(T t);
+
+    /**
+     * @brief Pushes a specified element onto the top of the Stack.
+     * @param element Specified element.
+     * @return Boolean value that indicates whether or not the operation was successful.
+     */
+    bool insert(T element);
+
+    /**
+     * @brief
+     * @param
+     * @return
+     */
+    bool remove(T element);
 
   protected:
+
+    /** @brief Name of class. */
     static const std::string CLASS_NAME;
 
+
+    /**
+     * @brief Returns the element at the top of the stack without removing it.
+     * @return Boolean value that indicates whether or not the operation was successful.
+     */
     T peek() override;
+
+    /**
+     * @brief Removes and returns the element at the top of the stack.
+     * @return Boolean value that indicates whether or not the operation was successful.
+     */
     T poll();
 
   private:
@@ -84,18 +142,12 @@ template <class T> T Stack<T>::poll() {
 
 //------------------------------------------------------------------------------
 
-/*
-* Pushes element onto top of stack
-*/
 template <class T> bool Stack<T>::push(T element) {
   return insert(element);
 }
 
 //------------------------------------------------------------------------------
 
-/*
-* Pops element off top of stack
-*/
 template <class T> T Stack<T>::pop() {
   T element;
 
@@ -139,9 +191,6 @@ template <class T> bool Stack<T>::remove(T element) {
 
 //------------------------------------------------------------------------------
 
-/*
-* Returns element from top of stack without popping it off the stack
-*/
 template <class T> T Stack<T>::top() {
   T element;
 
@@ -162,4 +211,4 @@ template <class T> T Stack<T>::top() {
   return element;
 }
 
-#endif
+#endif // STACK_H

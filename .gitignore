@@ -1,3 +1,6 @@
+#Folders to ignore
+bin/
+
 # Prerequisites
 *.d
 

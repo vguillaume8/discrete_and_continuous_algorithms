@@ -1,5 +1,23 @@
-#ifndef ABSTRACT_DATA_TYPE
-#define ABSTRACT_DATA_TYPE
+/**
+ * @file DataType.hpp
+ * @version 1.0
+ * @title DataType
+ * @author Jabari Dash
+ * @brief Base class to be derived by data types that will be used in data structures.
+ * @date 05/31/2017
+ * @code
+  int main() {
+
+    // Code example
+    std::cout << "Hello World" << std::endl;
+
+    return 0;
+  }
+ * @endcode
+ */
+
+#ifndef DATA_TYPE
+#define DATA_TYPE
 
 #include <sstream>              // std::ostream
 #include <string>               // std::string
@@ -7,11 +25,29 @@
 
 template <class T> class DataType: public AbstractObject {
   public:
+
+    /**
+     * @brief Gives the value of the object back.
+     * @return Returns value attribute.
+     */
     T get_value();
+
+    /**
+     * @brief Sets the value of DataType.
+     * @param data The specified data that will be stored into the value field.
+     * @return Boolean value that indicates whether or not the value field was successfully set.
+     */
     bool set_value(T data);
+
+    /**
+     * @brief Returns a printable string representation of the data.
+     * @return String representation of data.
+     */
     std::string to_string();
 
   protected:
+
+    /** @brief The value of the data. Example, for DataType<int>, value is an integer. */
     T value;
 };
 
@@ -86,4 +122,4 @@ template <class T> bool operator!=(DataType<T>& n, DataType<T>& m) {
 }
 
 
-#endif
+#endif // DATA_TYPE_H

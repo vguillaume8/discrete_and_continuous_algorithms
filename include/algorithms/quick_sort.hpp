@@ -5,50 +5,6 @@
 #include <stdlib.h>
 #include "../../include/util/util.hpp"
 
-/*
-QUICKSORT
-
-Arguments:
-
-int[] a, array (pointer to array) of integers to be sorted
-int l, left bound of array
-int r, right bount of array
-int c, optional counter that counts the amount of recursive calls
-
-Algorithm:
---------------------------------------------------------------------------
-
-0. Exit condition: If left greater than or equal to  right, do nothing
-
-1. Randomly pick a pivot point in the array
-
-2. Parition the array such that all values less than the pivot element
-	 are to the left of all elements greater than the pivot point
-
-	 Ex:
-
-	 Pivot = 6
-
-	 Before 1st partition: {15, 3, 2, 1, 9, 5, 7, 8, 6, 0, 10, 18, 22}
-
-	 // TODO - write correctly
-	 After 1st partition: {0, 3, 2, 1, 5, 9, 7, 8, 6, 15, 10, 18, 22}
-
-	 Partition:
-
-	 Condition: While the left most index pointer has not exceeded the value  of the right most index pointer
-
-	 1. Nested Loop: from left of array to first value that is out of place (greater than the pivot)
-
-	 2. Nested Loop: from right of array to first value that is out of place (less than the pivot)
-
-	 3. Swap the two out of place values
-
-	 4. Repeat until the exit condition is met
-
-3. Call quicksort on both the left and right sublists
-
-*/
 int quick_sort(int* a, int l, int r, int c) {
 
 	// Check exit condition

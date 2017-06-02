@@ -12,7 +12,7 @@ void distribution(std::vector< std::vector<int> >& D, int coins[], int change, i
     for (int j = change; j > 0; j--) {
       int used = D[i][change];
 
-      if (used == 1 && change<= j) {
+      if (used == 1 && change <= j) {
         printf("%i, ", coins[i]);
         change = change - coins[i];
       }
@@ -27,7 +27,7 @@ int coin_problem(std::vector< std::vector<int> >& C, std::vector< std::vector<in
   int previous, current, index;
 
   for (int j = 1; j <= change; j++) {
-    C[1][j] = j /coins[1];
+    C[1][j] = j / coins[1];
     D[1][j] = 1;
   }
 

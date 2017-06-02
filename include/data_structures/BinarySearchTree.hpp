@@ -1,37 +1,123 @@
+/**
+ * @file BinarySearchTree.hpp
+ * @version 1.0
+ * @title BinarySearchTree
+ * @author Jabari Dash
+ * @brief Implementation of a binary search tree via linked nodes.
+ * @date 05/31/2017
+ * @code
+  int main() {
+
+    // Code example
+    std::cout << "Hello World" << std::endl;
+
+    return 0;
+  }
+ * @endcode
+ */
+
 #ifndef BINARY_SEARCH_TREE_H
 #define BINARY_SEARCH_TREE_H
 
 #include <string>                     // std::string
 #include <vector>                     // std::vector<T>
 #include <stdexcept>                  // std::out_of_range
+#include "DataStructure.hpp"          // DataStructure<T>
 #include "BinarySearchTreeNode.hpp"   // BinarySearchTreeNode<T>
-#include "DataStructure.hpp"          // DataStructure
 #include "../util/util.hpp"           // util::to_string(std::vector<T>)
 
-/**
-* Binary Search Tree implemented as a linked node tree
-*/
 template <class T> class BinarySearchTree: public DataStructure<T> {
   public:
-    // Constructors
+// Constructors
+//------------------------------------------------------------------------------
+
+    /**
+     * @brief Constructs an empty tree.
+     */
     BinarySearchTree();
+
+    /**
+     * @brief Constructs tree from a vector.
+     * @param vect Vector of elements that will be inserted into the tree.
+     */
     BinarySearchTree(std::vector<T> vect);
 
-    // Public methods from DataStructure
-    bool contains(T t);
-    bool insert(T t);
+// Public methods from DataStructure
+//------------------------------------------------------------------------------
+
+    /**
+     * @brief Indicates whether or not a specified element is in the tree.
+     * @param Specified element to search for.
+     * @return Boolean value as to whether or not the tree contains the specified element.
+     */
+    bool contains(T element);
+
+    /**
+     * @bried Inserts a specified element into the tree.
+     * @param Specified element to be inserted.
+     * @return Boolean value as to whether or not the insertion was successful/
+     */
+    bool insert(T element);
+
+    /**
+     * @brief Returns, but does not remove the root element of the tree.
+     * @return Value at the root of the tree.
+     */
     T peek();
+
+    /**
+     * @brief Returns and removes the root element of the tree.
+     * @return Value at the root of the tree.
+     */
     T poll();
-    bool remove(T t);
+
+    /**
+     * @brief Removes a specified element from the tree.
+     * @param Specified element to be removed.
+     * @return Boolean value as to whether or not the element was successfully removed.
+     */
+    bool remove(T element);
+
+    /**
+     * @brief Pre order traversal
+     * @return Returns string of elements from the tree in pre order.
+     */
     std::string to_string();
+
+    /**
+     * @brief Pre order traversal
+     * @return Returns vector of elements from the tree in pre order.
+     */
     std::vector<T> to_vector();
 
-    // Instance methods
+// Instance methods
+//------------------------------------------------------------------------------
+    /**
+     * @brief In order traversal
+     * @return Returns vector of elements from the tree in lexographical order.
+     */
     std::vector<T> to_vector_in_order();
+
+    /**
+     * @brief Pre order traversal
+     * @return Returns vector of elements from the tree in pre order.
+     */
     std::vector<T> to_vector_pre_order();
+
+    /**
+     * @brief Post order traversal
+     * @return Returns vector of elements from the tree in post order.
+     */
     std::vector<T> to_vector_post_order();
 
-    // Static
+// Static methods
+//------------------------------------------------------------------------------
+    /**
+     * @brief Implementation of tree sort. Builds a binary tree, and places elements into
+     * array in ascending order via in-order traversal.
+     * @param vect Vector of elements to be sorted
+     * @return Returns a vector of lexographically sorted elements.
+     */
     static std::vector<T> sort(std::vector<T> vect);
 
   protected:
@@ -57,9 +143,6 @@ template <class T> const std::string BinarySearchTree<T>::CLASS_NAME = "BinarySe
 
 //------------------------------------------------------------------------------
 
-/**
-* Constructs an empty tree
-*/
 template <class T> BinarySearchTree<T>::BinarySearchTree() {
   root_node = NULL;
   DataStructure<T>::length = 0;
@@ -67,9 +150,6 @@ template <class T> BinarySearchTree<T>::BinarySearchTree() {
 
 //------------------------------------------------------------------------------
 
-/**
-* Constructs a tree provided a std::vector<T> as input.
-*/
 template <class T> BinarySearchTree<T>::BinarySearchTree(std::vector<T> vect) {
 
   // Construct empty tree
@@ -87,22 +167,14 @@ template <class T> BinarySearchTree<T>::BinarySearchTree(std::vector<T> vect) {
 
 //------------------------------------------------------------------------------
 
-/**
-* Returns a vector sorted in ascending order (lowest starting at index 0) via
-* tree sort.
-*/
 template <class T> std::vector<T> BinarySearchTree<T>::sort(std::vector<T> vect) {
   BinarySearchTree<T> tree(vect);
 
   return tree.to_vector_in_order();
 }
 
-
 //------------------------------------------------------------------------------
 
-/**
-* Inserts an element into the tree
-*/
 template <class T> bool BinarySearchTree<T>::insert(T element) {
   bool inserted = false;
 
@@ -134,15 +206,13 @@ template <class T> bool BinarySearchTree<T>::insert(T element) {
 
 //------------------------------------------------------------------------------
 
-/**
-* Returns the value of the root node of the tree without removing it
-*/
 template <class T> T BinarySearchTree<T>::peek() {
 
   // If the tree is empty
   if (DataStructure<T>::empty()) {
     std::string message;
 
+    // Error message
     message += CLASS_NAME + "::peek() " + CLASS_NAME + " is empty";
 
     // Throw error
@@ -154,9 +224,6 @@ template <class T> T BinarySearchTree<T>::peek() {
 
 //------------------------------------------------------------------------------
 
-/**
-* Removes and returns the value of the root node of the tree.
-*/
 template <class T> T BinarySearchTree<T>::poll() {
   T element;
 
@@ -171,6 +238,7 @@ template <class T> T BinarySearchTree<T>::poll() {
   } catch(std::out_of_range& error) {
     std::string message;
 
+    // Error message
     message += CLASS_NAME + "::poll() " + CLASS_NAME + " is empty\n" + error.what() + "\n";
 
     // Throw error
@@ -182,9 +250,6 @@ template <class T> T BinarySearchTree<T>::poll() {
 
 //------------------------------------------------------------------------------
 
-/**
-* Removes a given element from the tree
-*/
 template <class T> bool BinarySearchTree<T>::remove(T element) {
   bool removed = false;
 
@@ -202,9 +267,6 @@ template <class T> bool BinarySearchTree<T>::remove(T element) {
 
 //------------------------------------------------------------------------------
 
-/**
-* Removes a given node from the tree and restores the binary search tree structure.
-*/
 template <class T> bool BinarySearchTree<T>::remove(BinarySearchTreeNode<T>* node) {
   bool removed = false;
 
@@ -297,18 +359,12 @@ template <class T> bool BinarySearchTree<T>::remove(BinarySearchTreeNode<T>* nod
 
 //------------------------------------------------------------------------------
 
-/**
-* Returns true if the tree contains a given element
-*/
 template <class T> bool BinarySearchTree<T>::contains(T element) {
   return contains(element, root_node);
 }
 
 //------------------------------------------------------------------------------
 
-/**
-* Returns true if the tree contains a given element.
-*/
 template <class T> bool BinarySearchTree<T>::contains(T element, BinarySearchTreeNode<T>* node) {
 
   // If we cannot find the node, return null
@@ -322,10 +378,6 @@ template <class T> bool BinarySearchTree<T>::contains(T element, BinarySearchTre
 
 //------------------------------------------------------------------------------
 
-/**
-* Finds and returns the pointer of a given element via binary search. NULL is returned
-* if the element is not found.
-*/
 template <class T> BinarySearchTreeNode<T>* BinarySearchTree<T>::find(T element, BinarySearchTreeNode<T>* node) {
 
   // If we are at a leaf node's child (NULL), we have search as far as we can go
@@ -352,18 +404,12 @@ template <class T> BinarySearchTreeNode<T>* BinarySearchTree<T>::find(T element,
 
 //------------------------------------------------------------------------------
 
-/**
-* Returns the tree as a string in pre order
-*/
 template <class T> std::string BinarySearchTree<T>::to_string() {
   return util::to_string(to_vector());
 }
 
 //------------------------------------------------------------------------------
 
-/**
-* Returns the tree as a vector in pre order
-*/
 template <class T> std::vector<T> BinarySearchTree<T>::to_vector() {
   std::vector<T> vect;
   to_vector(root_node, vect);
@@ -373,9 +419,6 @@ template <class T> std::vector<T> BinarySearchTree<T>::to_vector() {
 
 //------------------------------------------------------------------------------
 
-/**
-* Returns the tree as a vector in ascending order
-*/
 template <class T> std::vector<T> BinarySearchTree<T>::to_vector_in_order() {
   std::vector<T> vect;
   to_vector_in_order(root_node, vect);
@@ -384,9 +427,6 @@ template <class T> std::vector<T> BinarySearchTree<T>::to_vector_in_order() {
 }
 //------------------------------------------------------------------------------
 
-/**
-* Returns the tree as a vector in pre order
-*/
 template <class T> std::vector<T> BinarySearchTree<T>::to_vector_pre_order() {
   std::vector<T> vect;
   to_vector_pre_order(root_node, vect);
@@ -396,9 +436,6 @@ template <class T> std::vector<T> BinarySearchTree<T>::to_vector_pre_order() {
 
 //------------------------------------------------------------------------------
 
-/**
-* Returns the tree as a vector in descending order
-*/
 template <class T> std::vector<T> BinarySearchTree<T>::to_vector_post_order() {
   std::vector<T> vect;
   to_vector_post_order(root_node, vect);
@@ -408,18 +445,12 @@ template <class T> std::vector<T> BinarySearchTree<T>::to_vector_post_order() {
 
 //------------------------------------------------------------------------------
 
-/**
-* Returns the tree as a vector in pre order
-*/
 template <class T> void BinarySearchTree<T>::to_vector(BinarySearchTreeNode<T>* node, std::vector<T>& vect) {
   to_vector_pre_order(node, vect);
 }
 
 //------------------------------------------------------------------------------
 
-/**
-* In order traversal
-*/
 template <class T> void BinarySearchTree<T>::to_vector_in_order(BinarySearchTreeNode<T>* node, std::vector<T>& vect) {
 
   if (node != NULL) {
@@ -431,9 +462,6 @@ template <class T> void BinarySearchTree<T>::to_vector_in_order(BinarySearchTree
 
 //------------------------------------------------------------------------------
 
-/**
-* Pre order traversal
-*/
 template <class T> void BinarySearchTree<T>::to_vector_pre_order(BinarySearchTreeNode<T>* node, std::vector<T>& vect) {
 
   if (node != NULL) {
@@ -445,9 +473,6 @@ template <class T> void BinarySearchTree<T>::to_vector_pre_order(BinarySearchTre
 
 //------------------------------------------------------------------------------
 
-/**
-* Post order traversal
-*/
 template <class T> void BinarySearchTree<T>::to_vector_post_order(BinarySearchTreeNode<T>* node, std::vector<T>& vect) {
 
   if (node != NULL) {
@@ -457,4 +482,4 @@ template <class T> void BinarySearchTree<T>::to_vector_post_order(BinarySearchTr
   }
 }
 
-#endif
+#endif // BINARY_SEARCH_TREE_H

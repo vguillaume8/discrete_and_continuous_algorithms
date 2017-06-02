@@ -1,13 +1,13 @@
 #ifndef UTIL_H
 #define UTIL_H
 
-#include <string>			// std::string
-#include <vector>			// std::vector<T>
-#include <iostream>		// std::cout, std::endl
-#include <climits>		// INT_MAX
-#include <cstdlib>		// rand()
-#include <sstream>		// std::stringstream
-#include <iterator>		// std::ostream_iterator
+#include <climits>     // INT_MAX
+#include <cstdlib>     // rand()
+#include <vector>      // std::vector<T>
+#include <string>      // std::string
+#include <sstream>     // std::stringstream
+#include <iterator>    // std::ostream_iterator
+#include <iostream>    // std::cout, std::endl
 
 namespace util {
 

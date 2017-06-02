@@ -1,19 +1,58 @@
+/**
+ * @file Edge.hpp
+ * @version 1.0
+ * @title Edge
+ * @author Jabari Dash
+ * @brief Weighted Edge in a weighted Graph.
+ * @date 05/31/2017
+ * @code
+  int main() {
+
+    // Code example
+    std::cout << "Hello World" << std::endl;
+
+    return 0;
+  }
+ * @endcode
+ */
+
 #ifndef EDGE_H
 #define EDGE_H
 
 #include <vector>             // std::vector<T>
-#include <stdexcept>          // invalid_argument
-#include "Vertex.hpp"         // Vector
+#include <stdexcept>          // std::invalid_argument
+#include "Vertex.hpp"         // Vertex<T>
 #include "DataType.hpp"       // DataType<T>
-#include "Pair.hpp"   // AbstractPair<T>
+#include "Pair.hpp"           // Pair<T>
 
 template <class T, class M> class Edge: public DataType<T> {
-
   public:
+
+    // TODO - UTILIZE SUPERCLASS ATTRIBUTES RATHER THAN NEW ONES
+
+    /** @brief First vertex. */
     Vertex<M> *u;
+
+    /** @brief Second vertex. */
     Vertex<M> *v;
 
+    /**
+     * @brief Constructs a weighted edge between two verticies
+     * @param a Value of first vertex.
+     * @param b Value of second vertex.
+     * @param w Weight of edge.
+     */
     Edge(M a, M b, T w);
+
+    // TODO - USE FIND FROM util::
+
+    /**
+     * @brief Provided a vector of verticies, finds am edge that connects two specified verticies.
+     * @param edges Vector of edges to search from.
+     * @param u First vertex.
+     * @param v Second vertex.
+     * @return Index of the edge.
+     */
     int find(std::vector< Edge<T,M> > edges, Vertex<M> u, Vertex<M> v);
 };
 

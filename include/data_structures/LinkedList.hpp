@@ -1,3 +1,21 @@
+/**
+ * @file LinkedList.hpp
+ * @version 1.0
+ * @title LinkedList
+ * @author Jabari Dash
+ * @brief Implementation of a Singly Linked List.
+ * @date 05/31/2017
+ * @code
+  int main() {
+
+    // Code example
+    std::cout << "Hello World" << std::endl;
+
+    return 0;
+  }
+ * @endcode
+ */
+
 #ifndef LINKED_LIST
 #define LINKED_LIST
 
@@ -10,45 +28,177 @@
 template <class T> class LinkedList: public AbstractLinkedList<T> {
   public:
     // Constructors
+
+    /**
+     * @brief Constructs an empty list.
+     */
     LinkedList();
+
+    /**
+     * @brief Constructs a linked list from a vector of elements.
+     * @param vect Vector of elements that will be inserted into the list.
+     */
     LinkedList(std::vector<T> vect);
+
+    /**
+     * @brief Destructor
+     */
     ~LinkedList();
 
     // Methods from DataStructure
+
+    /**
+     * @brief Indicates whether the data structure contains a specified element.
+     * @param element Specified element to check for.
+     * @return True if the structure contains the specified element, otherwise false.
+     */
     bool contains(T t);
+
+    /**
+     * @brief Inserts a specified element into the data structure.
+     * @param element Specified element to be inserted.
+     * @return Boolean value indicating whether or not the element was successfully inserted.
+     */
     bool insert(T t);
+
+    /**
+     * @brief Indicates whether or not the data structure is empty.
+     * @return True if the structure has 0 elements, otherwise false.
+     */
     bool empty();
+
+    /**
+     * @brief Returns, but does not remove the root element of the structure.
+     * @return Value at the root of the structure.
+     */
     T peek();
+
+    /**
+     * @brief Returns and removes the first element of the structure.
+     * @return Value at the root of the structure.
+     */
     T poll();
+
+    /**
+     * @brief Removes a specified element from the structure.
+     * @param Specified element to be removed.
+     * @return Boolean value as to whether or not the element was successfully removed.
+     */
     bool remove(T t);
+
+    /**
+     * @brief Determines the size as the number of elements in the structure.
+     * @return The number of elements in the structure.
+     */
     int size();
+
+    /**
+     * @brief
+     * @return
+     */
     std::string to_string();
+
+    /**
+     * @brief Converts the data structure into a printable string.
+     * @return String representation of the structure.
+     */
     std::vector<T> to_vector();
 
     // Methods from AbstractIndexedDataStructure
+
+    /**
+     * @brief get Returns the element at the despecified index.
+     * @param index Index of the desired element.
+     * @return The desired element from the provided index.
+     */
     T get(int index);
+
+    /**
+     * @brief insert Inserts the element at the specified index.
+     * @param element The element to be inserted.
+     * @param index Specified index in which the element will be inserted
+     * @return Returns true if the element was inserted successfully, otherwise false.
+     */
     bool insert(T data, int index);
+
+    /**
+     * @brief remove_from_index Removes the element at the specified index.
+     * @param index Specified index from which the element will be removed
+     * @return Returns true if the element was inserted removed, otherwise false.
+     */
     bool remove_from_index(int index);
+
+    /**
+     * @brief set Overwrites the value at the specified index with the provideds element.
+     * @param element The element to be inserted.
+     * @param index Specified index in which the element will be inserted
+     * @return Returns true if the element was inserted successfully, otherwise false.
+     */
     bool set (T data, int index);
+
+    /**
+    * @brief Swaps the values of two elements by their specified indicies.
+    * @param index_a Specified index of the first element to be swapped from.
+    * @param index_b Specified index of the second element to be swapped from.
+    * @return Returns true if the elements at index_a and index_b were successfully swapped.
+    */
     bool swap(int i, int j);
 
     // Methods from AbstractLinkedList
+
+    /**
+     * @brief Prepends an element to the front of the list.
+     * @param element Element to be prepended.
+     * @return Bool value that indicates whether or not the insertion was successful or not.
+     */
     bool add_head(T data);
+
+    /**
+     * @brief Appends an element to the back of the list.
+     * @param element Element to be appended.
+     * @return Bool value that indicates whether or not the insertion was successful or not.
+     */
     bool add_tail(T data);
+
+    /**
+     * @brief Removes the last element from the back of the list.
+     * @return Bool value that indicates whether or not the removal was successful or not.
+     */
     bool remove_tail();
+
+    /**
+     * @brief Removes the first element from the front of the list.
+     * @return Bool value that indicates whether or not the insertion was removal or not.
+     */
     bool remove_head();
 
     // Static methods
+
+    /**
+     * @brief Bubble sorts a LinkedList
+     * @param linked_list List to be sorted.
+     * @return Returns a LinkedList sorted in ascending order.
+     */
     static LinkedList<T> sort(LinkedList<T> linked_list);
 
   protected:
+    /** @brief Name of class. */
     static const std::string CLASS_NAME;
 
+    /**
+     * @brief Returns the pointer to a node at a specified index.
+     * @param index of specified node.
+     * @return Pointer to specified node.
+     */
     LinkedListNode<T>* get_node(int index);
 
   private:
     // Attributes
+
+    /** @brief Pointer to first node in list. */
     LinkedListNode<T>* head;
+
+    /** @brief Pointer to last node in list. */
     LinkedListNode<T>* tail;
 };
 
@@ -57,9 +207,6 @@ template <class T> const std::string LinkedList<T>::CLASS_NAME = "LinkedList<T>"
 
 //------------------------------------------------------------------------------
 
-/*
-* Constructs an empty list
-*/
 template <class T> LinkedList<T>::LinkedList() {
 
   // Set head and tail pointers to null to represent an empty list
@@ -72,9 +219,6 @@ template <class T> LinkedList<T>::LinkedList() {
 
 //------------------------------------------------------------------------------
 
-/**
-* Constructs a list from a std::vector<T>
-*/
 template <class T> LinkedList<T>::LinkedList(std::vector<T> vect) {
 
   // Set head and tail pointers to null to represent an empty list
@@ -101,9 +245,6 @@ template <class T> LinkedList<T>::~LinkedList() {
 
 //------------------------------------------------------------------------------
 
-/**
-* Appends an element to the end of the list
-*/
 template <class T> bool LinkedList<T>::add_tail(T d) {
 
   // If the list is empty
@@ -135,9 +276,6 @@ template <class T> bool LinkedList<T>::add_tail(T d) {
 
 //------------------------------------------------------------------------------
 
-/**
-* Prepends an element to the front of the list
-*/
 template <class T> bool LinkedList<T>::add_head(T d) {
 
   // If the list is empty
@@ -164,9 +302,6 @@ template <class T> bool LinkedList<T>::add_head(T d) {
 
 //------------------------------------------------------------------------------
 
-/**
-* Returns the element at a given index
-*/
 template <class T> T LinkedList<T>::get(int index) {
   LinkedListNode<T>* node = get_node(index);
 
@@ -224,9 +359,6 @@ template <class T> LinkedListNode<T>* LinkedList<T>::get_node(int index) {
 
 //------------------------------------------------------------------------------
 
-/**
-* Inserts the given element at the given index
-*/
 template <class T> bool LinkedList<T>::insert(T element, int index) {
   LinkedListNode<T>* node;
 
@@ -262,9 +394,6 @@ template <class T> bool LinkedList<T>::insert(T element, int index) {
 
 //------------------------------------------------------------------------------
 
-/**
-* Returns true if the list has zero elements
-*/
 template <class T> bool LinkedList<T>::empty() {
 
   // If the list is length 0, and all pointers are null, return true
@@ -280,9 +409,6 @@ template <class T> bool LinkedList<T>::empty() {
 
 //------------------------------------------------------------------------------
 
-/**
-* Returns the value at the front of the linked list without removing it
-*/
 template <class T> T LinkedList<T>::peek() {
   if (empty()) {
     std::string message;
@@ -298,9 +424,6 @@ template <class T> T LinkedList<T>::peek() {
 
 //------------------------------------------------------------------------------
 
-/**
-* Returns and removes the value at the front of the linked list.
-*/
 template <class T> T LinkedList<T>::poll() {
   T element;
 
@@ -329,18 +452,12 @@ template <class T> T LinkedList<T>::poll() {
 
 //------------------------------------------------------------------------------
 
-/**
-* Removes the first occurent of a given element
-*/
 template <class T> bool LinkedList<T>::remove(T element) {
   return true;
 }
 
 //------------------------------------------------------------------------------
 
-/**
-* Removes the element at the given index
-*/
 template <class T> bool LinkedList<T>::remove_from_index(int index) {
 
   // If the index is out of bounds
@@ -535,18 +652,12 @@ template <class T> bool LinkedList<T>::contains(T t) {
 
 //------------------------------------------------------------------------------
 
-/**
-*
-*/
 template <class T> bool LinkedList<T>::insert(T t) {
   add_tail(t);
 }
 
 //------------------------------------------------------------------------------
 
-/**
-* Returns the number of elements in the list
-*/
 template <class T> int LinkedList<T>::size() {
 
   return DataStructure<T>::length;

@@ -1,5 +1,23 @@
-#ifndef MIN_HEAP_H
-#define MIN_HEAP_H
+/**
+ * @file MaxHeap.hpp
+ * @version 1.0
+ * @title MaxHeap
+ * @author Jabari Dash
+ * @brief Implementation of a max heap / priority queue with higher priority to larger values.
+ * @date 05/31/2017
+ * @code
+  int main() {
+
+    // Code example
+    std::cout << "Hello World" << std::endl;
+
+    return 0;
+  }
+ * @endcode
+ */
+
+#ifndef MAX_HEAP_H
+#define MAX_HEAP_H
 
 #include <string>           // std::string
 #include <vector>           // std::vector<T>
@@ -8,19 +26,58 @@
 
 template <class T> class MaxHeap: public BinaryTree<T> {
   public:
-    // Constructors
+// Constructors
+//------------------------------------------------------------------------------
+    /**
+     * @brief Constructs an empty heap.
+     */
     MaxHeap();
-    MaxHeap(std::vector<T> array);
 
-    // Abstract methods to implement
-    bool insert(T t);
-    bool remove(T t);
+//------------------------------------------------------------------------------
+
+    /**
+     * @brief Constructs a heap from the passed vector.
+     * @param vect Vector of values that will populate the heap.
+     */
+    MaxHeap(std::vector<T> vect);
+
+// Abstract methods to implement
+//------------------------------------------------------------------------------
+    /**
+     * @brief Inserts a specified element into the data structure.
+     * @param element Specified element to be inserted.
+     * @return Boolean value indicating whether or not the element was successfully inserted.
+     */
+    bool insert(T element);
+
+//------------------------------------------------------------------------------
+
+    /**
+     * @brief Indicates whether or not the data structure is empty.
+     * @return True if the structure has 0 elements, otherwise false.
+     */
+    bool remove(T element);
+
+//------------------------------------------------------------------------------
+
+    /**
+     * @brief Returns and removes the first element of the structure.
+     * @return Value at the root of the structure.
+     */
     T poll();
 
-    // Static methods
-    static std::vector<T> sort(std::vector<T> array);
+// Static methods
+//------------------------------------------------------------------------------
+    /**
+     * @brief Bubble sorts a LinkedList
+     * @param linked_list List to be sorted.
+     * @return Returns a LinkedList sorted in ascending order.
+     */
+    static std::vector<T> sort(std::vector<T> vect);
 
   protected:
+
+    /** @brief Name of class. */
     static const std::string CLASS_NAME;
 
   private:
@@ -81,9 +138,6 @@ template <class T> bool MaxHeap<T>::remove(T t) {
 
 //------------------------------------------------------------------------------
 
-/*
-* Insert node into heap
-*/
 template <class T> bool MaxHeap<T>::insert(T t) {
   // Add new element onto back of array
   BinaryTree<T>::elements.push_back(t);
@@ -193,4 +247,4 @@ template <class T> std::vector<T> MaxHeap<T>::sort(std::vector<T> array) {
   return array;
 }
 
-#endif
+#endif // MAX_HEAP_H
