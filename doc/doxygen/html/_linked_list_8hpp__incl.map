@@ -1,7 +1,7 @@
 <map id="/home/jabari/discrete_and_continuous_algorithms/include/data_structures/LinkedList.hpp" name="/home/jabari/discrete_and_continuous_algorithms/include/data_structures/LinkedList.hpp">
-<area shape="rect" id="node5" href="$_abstract_linked_list_8hpp.html" title="Any implementation of a linked list should extended this abstract class. " alt="" coords="48,125,201,152"/>
+<area shape="rect" id="node5" href="$_abstract_linked_list_8hpp.html" title="Any implementation of a LinkedList should extended this abstract class. " alt="" coords="48,125,201,152"/>
 <area shape="rect" id="node9" href="$util_8hpp.html" title="Various functions used and reused in other classes. " alt="" coords="418,275,515,301"/>
-<area shape="rect" id="node6" href="$_indexed_data_structure_8hpp.html" title="All data structures that have indicies by nature (Linked Lists, Queues) implement this interface..." alt="" coords="43,200,217,227"/>
+<area shape="rect" id="node6" href="$_indexed_data_structure_8hpp.html" title="All data structures that have indicies by nature (LinkedList, Queue) implement this interface..." alt="" coords="43,200,217,227"/>
 <area shape="rect" id="node7" href="$_data_structure_8hpp.html" title="DataStructure Interface. " alt="" coords="67,275,195,301"/>
 <area shape="rect" id="node8" href="$_abstract_object_8hpp.html" title="All classes will inherit from this abstract class. " alt="" coords="43,349,177,376"/>
 </map>

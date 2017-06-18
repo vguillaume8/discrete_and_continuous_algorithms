@@ -3,7 +3,7 @@
  * @version 1.0
  * @title LinkedListNode
  * @author Jabari Dash
- * @brief Implementation of a Singly Linked List Node.
+ * @brief Implementation of a Singly LinkedListNode.
  * @date 05/31/2017
  * @code
   int main() {

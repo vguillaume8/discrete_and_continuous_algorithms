@@ -1,8 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "../include/util/util.hpp"
-#include "../include/algorithms/parenthesis_match.hpp"
+#include "../../include/util/util.hpp"
+#include "../../src/parenthesis_match.hpp"
 
 /**
  Compile:
@@ -20,26 +20,33 @@ int main() {
   std::vector <Pair <int> > index_pairs;
   std::vector <Pair <int> > index_pairs_alternate;
 
+  // Test string
   std::string str = "(Hi I(')m) J(a(b)a)ri";
   std::string str1 = "(((((((((())))))))))";
   std::string str2 = "(((((((()";
 
+  // Put them into a vector
   strings.push_back(str);
   strings.push_back(str1);
   strings.push_back(str2);
 
-  for (int i = 0; i < strings.size(); i++) {
-    index_pairs = parenthesis_pairs(strings[i], open_token, close_token);
-    index_pairs_alternate = parenthesis_pairs_alternate(strings[i], open_token, close_token);
+  index_pairs = parenthesis_pairs(strings[0], open_token, close_token);
+  index_pairs_alternate = parenthesis_pairs_alternate(strings[0], open_token, close_token);
 
-    std::cout << "Method 1: ";
-    util::display(index_pairs);
+  util::display(index_pairs);
+  util::display(index_pairs_alternate);
 
-    std::cout << "Method 2: ";
-    util::display(index_pairs_alternate);
+  index_pairs = parenthesis_pairs(strings[1], open_token, close_token);
+  index_pairs_alternate = parenthesis_pairs_alternate(strings[1], open_token, close_token);
 
-    std::cout << std::endl;
-  }
+  util::display(index_pairs);
+  util::display(index_pairs_alternate);
+
+  index_pairs = parenthesis_pairs(strings[2], open_token, close_token);
+  index_pairs_alternate = parenthesis_pairs_alternate(strings[2], open_token, close_token);
+
+  util::display(index_pairs);
+  util::display(index_pairs_alternate);
 
   return 0;
 }

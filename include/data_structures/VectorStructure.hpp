@@ -3,7 +3,7 @@
  * @version 1.0
  * @title VectorStructure
  * @author Jabari Dash
- * @brief Interface from which all data structures that are based on vectors (arrays) shall implement.
+ * @brief Interface from which a DataStructure that is based on a vector shall implement.
  * @date 05/31/2017
  * @code
   int main() {

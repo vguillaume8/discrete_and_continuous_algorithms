@@ -4,15 +4,6 @@
 #include "../include/data_structures/deprecated/Graph.hpp"
 #include "../include/util/util.hpp"
 
-/*
-To compile:
-c++ -o ../bin/test_floyds_algorithm test_floyds_algorithm.cpp
-
-To run:
-../bin/./test_floyds_algorithm
-
-*/
-
 int main() {
 
   // Get test graph

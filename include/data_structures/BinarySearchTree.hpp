@@ -3,7 +3,7 @@
  * @version 1.0
  * @title BinarySearchTree
  * @author Jabari Dash
- * @brief Implementation of a binary search tree via linked nodes.
+ * @brief Implementation of a BinarySearchTree via linked BinarySearchTreeNodes.
  * @date 05/31/2017
  * @code
   int main() {

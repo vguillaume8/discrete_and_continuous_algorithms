@@ -3,7 +3,7 @@
  * @version 1.0
  * @title Vertex
  * @author Jabari Dash
- * @brief Vertex for use in Graphs.
+ * @brief Vertex for use in a Graph.
  * @date 05/31/2017
  * @code
   int main() {

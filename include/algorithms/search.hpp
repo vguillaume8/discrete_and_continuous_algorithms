@@ -19,6 +19,8 @@
 #ifndef SEARCH_H
 #define SEARCH_H
 
+#include <vector>
+
 /**
  * @brief Performs a binary search (iteratively) on a vector of sorted (ascending) elements.
  * @param vect Vector of sorted elements.
@@ -31,7 +33,7 @@ template <typename T> int binary_search_iterative(T element, std::vector<T> vect
  * @param vect Vector of sorted elements.
  * @return The index in which the specified element is located. -1 Is returned if the element is not present.
  */
-template <typename T> int binary_search_recursive(T element, std::vector<T> vect, int l, int r);
+template <typename T> int binary_search_recursive(T element, std::vector<T> vect, int left, int right);
 
 //------------------------------------------------------------------------------
 
@@ -42,8 +44,8 @@ template <typename T> int binary_search_iterative(T element, std::vector<T> vect
 	int index;
 
 	left = 0;
-	right = vect.size();
-	//right = vect.size() - 1;
+	//right = vect.size();
+	right = vect.size() - 1;
 
 	// By default, index is -1, and will be replace by the actual index if the element is found.
 	// It will otherwise remain -1 to indicate that the element is not in the vector.

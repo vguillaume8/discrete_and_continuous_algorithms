@@ -3,7 +3,7 @@
  * @version 1.0
  * @title IndexedDataStructure
  * @author Jabari Dash
- * @brief All data structures that have indicies by nature (Linked Lists, Queues) implement this interface
+ * @brief All data structures that have indicies by nature (LinkedList, Queue) implement this interface
  * @date 05/31/2017
  * @code
   int main() {

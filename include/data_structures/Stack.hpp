@@ -3,7 +3,7 @@
  * @version 1.0
  * @title Stack
  * @author Jabari Dash
- * @brief Implementation of a vector based stack.
+ * @brief VectorStructure implementation of a Stack.
  * @date 05/31/2017
  * @code
   int main() {

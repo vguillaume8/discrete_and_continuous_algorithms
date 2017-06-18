@@ -18,8 +18,8 @@
  */
 
 
-#include "../../include/data_structures/Stack.hpp"
-#include "../../include/data_structures/Pair.hpp"
+#include "../include/data_structures/Stack.hpp"
+#include "../include/data_structures/Pair.hpp"
 #include <vector>
 #include <string>
 
@@ -57,7 +57,7 @@ std::vector< Pair <int> > parenthesis_pairs(std::string str, char open_token, ch
 * @param close_token The token that represents the closing character.
 * @return Vector of integer pairs that represent the corresponding indicies of opening and closing tokens.
 */
-std::vector< Pair<int> > parenthesis_pairs_alternate(std::string str, char open_token, char close_token)
+std::vector< Pair<int> > parenthesis_pairs_alternate(std::string str, char open_token, char close_token);
 
 template <class T> std::vector< Pair <int> > locate_pairs(std::vector<T> array, T open_token, T close_token) {
   std::vector< Pair<int> > index_pairs;

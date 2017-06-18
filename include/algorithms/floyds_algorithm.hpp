@@ -3,7 +3,7 @@
  * @version 1.0
  * @title floyds_algorithm
  * @author Jabari Dash
- * @brief Given a weighted, undirected graph, find all shortest paths between all verticies
+ * @brief Given a weighted, UndirectedGraph, find all shortest paths between all verticies
  * @date 06/16/2017
  * @code
   int main() {

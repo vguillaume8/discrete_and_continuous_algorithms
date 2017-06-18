@@ -3,7 +3,7 @@
  * @version 1.0
  * @title DataType
  * @author Jabari Dash
- * @brief Base class to be derived by data types that will be used in data structures.
+ * @brief Base class to be derived by data types that will be used within a DataStructure.
  * @date 05/31/2017
  * @code
   int main() {

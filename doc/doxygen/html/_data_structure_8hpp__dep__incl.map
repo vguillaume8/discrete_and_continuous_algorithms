@@ -1,12 +1,12 @@
 <map id="/home/jabari/discrete_and_continuous_algorithms/include/data_structures/DataStructure.hpp" name="/home/jabari/discrete_and_continuous_algorithms/include/data_structures/DataStructure.hpp">
 <area shape="rect" id="node2" href="$_vector_structure_8hpp.html" title="Interface from which all data structures that are based on vectors (arrays) shall implement..." alt="" coords="216,126,403,197"/>
-<area shape="rect" id="node8" href="$_indexed_data_structure_8hpp.html" title="All data structures that have indicies by nature (Linked Lists, Queues) implement this interface..." alt="" coords="427,126,613,197"/>
+<area shape="rect" id="node8" href="$_indexed_data_structure_8hpp.html" title="All data structures that have indicies by nature (LinkedList, Queue) implement this interface..." alt="" coords="427,126,613,197"/>
 <area shape="rect" id="node11" href="$_binary_search_tree_8hpp.html" title="Implementation of a binary search tree via linked nodes. " alt="" coords="637,126,824,197"/>
 <area shape="rect" id="node3" href="$_binary_tree_8hpp.html" title="Binary Tree Interface. " alt="" coords="5,246,192,317"/>
 <area shape="rect" id="node7" href="$_stack_8hpp.html" title="Implementation of a vector based stack. " alt="" coords="216,246,403,317"/>
 <area shape="rect" id="node4" href="$_min_heap_8hpp.html" title="Implementation of a min heap / priority queue with higher priority to loweer values. " alt="" coords="5,366,192,437"/>
 <area shape="rect" id="node6" href="$_max_heap_8hpp.html" title="Implementation of a max heap / priority queue with higher priority to larger values. " alt="" coords="216,366,403,437"/>
 <area shape="rect" id="node5" href="$sort_8hpp.html" title="Various sorting algorithms. " alt="" coords="5,485,192,541"/>
-<area shape="rect" id="node9" href="$_abstract_linked_list_8hpp.html" title="Any implementation of a linked list should extended this abstract class. " alt="" coords="427,246,613,317"/>
+<area shape="rect" id="node9" href="$_abstract_linked_list_8hpp.html" title="Any implementation of a LinkedList should extended this abstract class. " alt="" coords="427,246,613,317"/>
 <area shape="rect" id="node10" href="$_linked_list_8hpp.html" title="Implementation of a Singly Linked List. " alt="" coords="427,366,613,437"/>
 </map>

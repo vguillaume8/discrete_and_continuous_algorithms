@@ -3,7 +3,7 @@
  * @version 1.0
  * @title BinarySearchTreeNode
  * @author Jabari Dash
- * @brief Node in linked binary search tree
+ * @brief Node in linked BinarySearchTree
  * @date 05/31/2017
  * @code
   int main() {

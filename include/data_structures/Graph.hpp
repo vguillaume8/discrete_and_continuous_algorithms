@@ -23,10 +23,6 @@
 #include "Edge.hpp"
 #include "Vertex.hpp"
 
-// difference between abstract class and interfaces
-// https://www.youtube.com/watch?v=nNwZN3mOVcw
-// https://www.tutorialspoint.com/cplusplus/cpp_interfaces.htm
-
 template <class T, class M> class Graph {
   public:
 
@@ -107,10 +103,6 @@ template <class T, class M> bool is_connected() {
 
 //------------------------------------------------------------------------------
 
-/*
-Returns true if and only if the Graph object's edges list has the egde that
-we are searching for
-*/
 template <class T, class M> bool Graph<T,M>::contains_edge(Edge<T,M> edge) {
   int n = edges.capacity();
   bool contains = false;
@@ -126,10 +118,6 @@ template <class T, class M> bool Graph<T,M>::contains_edge(Edge<T,M> edge) {
 
 //------------------------------------------------------------------------------
 
-/*
-Returns true if and only if the Graph object's vertex list has the vertex that
-we are searching for
-*/
 template <class T, class M> bool Graph<T,M>::contains_vertex(Vertex<T> vertex) {
   int n = verticies.capacity();
   bool contains = false;
@@ -143,4 +131,4 @@ template <class T, class M> bool Graph<T,M>::contains_vertex(Vertex<T> vertex) {
   return contains;
 }
 
-#endif
+#endif // GRAPH_H

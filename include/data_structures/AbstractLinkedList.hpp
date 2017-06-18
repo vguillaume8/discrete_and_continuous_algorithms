@@ -3,7 +3,7 @@
  * @version 1.0
  * @title AbstractLinkedList
  * @author Jabari Dash
- * @brief Any implementation of a linked list should extended this abstract class.
+ * @brief Any implementation of a LinkedList should extended this abstract class.
  * @date 05/31/2017
  * @code
   int main() {

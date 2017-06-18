@@ -3,7 +3,7 @@
  * @version 1.0
  * @title BinaryTree
  * @author Jabari Dash
- * @brief Binary Tree Interface
+ * @brief BinaryTree Interface
  * @date 05/31/2017
  * @code
   int main() {

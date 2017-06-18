@@ -3,7 +3,7 @@
  * @version 1.0
  * @title kruskals_algorithm
  * @author Jabari Dash
- * @brief Given a connected weighted graph, find the minimum spanning tree.
+ * @brief Given a connected WeightedGraph, find the minimum spanning tree.
  * @date 06/16/2017
  * @code
   int main() {
@@ -47,7 +47,7 @@ template <template T> T size(Edge<T> edge);
 template <template T> T find(Edge<T> edge);
 
 /**
- * @brief 
+ * @brief
  * @param
  * @return
  */

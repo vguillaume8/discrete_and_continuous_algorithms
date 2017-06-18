@@ -92,90 +92,92 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#ifndef SEARCH_H</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SEARCH_H</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keywordtype">int</span> <a class="code" href="search_8hpp.html#ab4243a56a76b7c4e1cc889fe6f390010">binary_search_iterative</a>(T element, std::vector&lt;T&gt; vect);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keywordtype">int</span> <a class="code" href="search_8hpp.html#ac9e4c87ff2de0ab91b295041bf655658">binary_search_recursive</a>(T element, std::vector&lt;T&gt; vect, <span class="keywordtype">int</span> l, <span class="keywordtype">int</span> r);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keywordtype">int</span> <a class="code" href="search_8hpp.html#ab4243a56a76b7c4e1cc889fe6f390010">binary_search_iterative</a>(T element, std::vector&lt;T&gt; vect);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keywordtype">int</span> <a class="code" href="search_8hpp.html#a9d64e2db5af5663eacdad951af56c867">binary_search_recursive</a>(T element, std::vector&lt;T&gt; vect, <span class="keywordtype">int</span> left, <span class="keywordtype">int</span> right);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="search_8hpp.html#ab4243a56a76b7c4e1cc889fe6f390010">   38</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keywordtype">int</span> <a class="code" href="search_8hpp.html#ab4243a56a76b7c4e1cc889fe6f390010">binary_search_iterative</a>(T element, std::vector&lt;T&gt; vect) {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">int</span> left;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">int</span> right;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">int</span> middle;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">int</span> index;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    left = 0;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    right = vect.size();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">//right = vect.size() - 1;</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// By default, index is -1, and will be replace by the actual index if the element is found.</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// It will otherwise remain -1 to indicate that the element is not in the vector.</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    index = -1;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">do</span> {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="search_8hpp.html#ab4243a56a76b7c4e1cc889fe6f390010">   40</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keywordtype">int</span> <a class="code" href="search_8hpp.html#ab4243a56a76b7c4e1cc889fe6f390010">binary_search_iterative</a>(T element, std::vector&lt;T&gt; vect) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">int</span> left;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">int</span> right;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">int</span> middle;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">int</span> index;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    left = 0;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">//right = vect.size();</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    right = vect.size() - 1;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">// By default, index is -1, and will be replace by the actual index if the element is found.</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// It will otherwise remain -1 to indicate that the element is not in the vector.</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    index = -1;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="comment">// Compute middle index of vector</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        middle = (left + right) / 2;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="comment">// If the specified element is in the middle, return the middle index</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">if</span> (element == vect[middle]) {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            index = middle;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="comment">// If the specified element is smaller than the middle value, continue searching left</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (element &lt; vect[middle]) {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            right = middle - 1;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="comment">// Otherwise, search right</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            left = middle + 1;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="comment">// While the left and right boundaries have not cross each other</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    } <span class="keywordflow">while</span> (right &lt; left == <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">// Return the index of the element</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">return</span> index;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">do</span> {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="comment">// Compute middle index of vector</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        middle = (left + right) / 2;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="comment">// If the specified element is in the middle, return the middle index</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">if</span> (element == vect[middle]) {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            index = middle;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="comment">// If the specified element is smaller than the middle value, continue searching left</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (element &lt; vect[middle]) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            right = middle - 1;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="comment">// Otherwise, search right</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            left = middle + 1;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="comment">// While the left and right boundaries have not cross each other</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    } <span class="keywordflow">while</span> (right &lt; left == <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">// Return the index of the element</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">return</span> index;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="search_8hpp.html#ac9e4c87ff2de0ab91b295041bf655658">   80</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keywordtype">int</span> <a class="code" href="search_8hpp.html#ac9e4c87ff2de0ab91b295041bf655658">binary_search_recursive</a>(T element, std::vector&lt;T&gt; vect, <span class="keywordtype">int</span> left, <span class="keywordtype">int</span> right) {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">// Compute the middle index of the vector</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">int</span> middle = (left + right) / 2;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">// If the left and right boundaries have not crossed each other</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">if</span> (left &lt;= right) {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="comment">// If the specified element is in the middle, return the middle index</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">if</span> (element == vect[middle]) {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keywordflow">return</span> middle;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        }</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="comment">// If the specified element is smaller than the middle value, continue searching left</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (element &lt; vect[middle]) {</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="search_8hpp.html#ac9e4c87ff2de0ab91b295041bf655658">binary_search_recursive</a>(element, vect, 0, middle-1);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="comment">// Otherwise, search right</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        } <span class="keywordflow">else</span>  {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="search_8hpp.html#ac9e4c87ff2de0ab91b295041bf655658">binary_search_recursive</a>(element, vect, middle+1, right);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        }</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="comment">// The left and right boundaries have crossed, and we have not found the element.</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="comment">// Return -1 to indicate that the element is not in the vector</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor">#endif // BINARY_SEARCH_H</span></div>
-<div class="ttc" id="search_8hpp_html_ab4243a56a76b7c4e1cc889fe6f390010"><div class="ttname"><a href="search_8hpp.html#ab4243a56a76b7c4e1cc889fe6f390010">binary_search_iterative</a></div><div class="ttdeci">int binary_search_iterative(T element, std::vector&lt; T &gt; vect)</div><div class="ttdoc">Performs a binary search (iteratively) on a vector of sorted (ascending) elements. </div><div class="ttdef"><b>Definition:</b> search.hpp:38</div></div>
-<div class="ttc" id="search_8hpp_html_ac9e4c87ff2de0ab91b295041bf655658"><div class="ttname"><a href="search_8hpp.html#ac9e4c87ff2de0ab91b295041bf655658">binary_search_recursive</a></div><div class="ttdeci">int binary_search_recursive(T element, std::vector&lt; T &gt; vect, int l, int r)</div><div class="ttdoc">Performs a binary search (recursively) on a vector of sorted (ascending) elements. </div><div class="ttdef"><b>Definition:</b> search.hpp:80</div></div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="search_8hpp.html#a9d64e2db5af5663eacdad951af56c867">   82</a></span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; <span class="keywordtype">int</span> <a class="code" href="search_8hpp.html#a9d64e2db5af5663eacdad951af56c867">binary_search_recursive</a>(T element, std::vector&lt;T&gt; vect, <span class="keywordtype">int</span> left, <span class="keywordtype">int</span> right) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">// Compute the middle index of the vector</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">int</span> middle = (left + right) / 2;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">// If the left and right boundaries have not crossed each other</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">if</span> (left &lt;= right) {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="comment">// If the specified element is in the middle, return the middle index</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">if</span> (element == vect[middle]) {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordflow">return</span> middle;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="comment">// If the specified element is smaller than the middle value, continue searching left</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (element &lt; vect[middle]) {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="search_8hpp.html#a9d64e2db5af5663eacdad951af56c867">binary_search_recursive</a>(element, vect, 0, middle-1);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="comment">// Otherwise, search right</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        } <span class="keywordflow">else</span>  {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="search_8hpp.html#a9d64e2db5af5663eacdad951af56c867">binary_search_recursive</a>(element, vect, middle+1, right);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="comment">// The left and right boundaries have crossed, and we have not found the element.</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="comment">// Return -1 to indicate that the element is not in the vector</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">#endif // BINARY_SEARCH_H</span></div>
+<div class="ttc" id="search_8hpp_html_ab4243a56a76b7c4e1cc889fe6f390010"><div class="ttname"><a href="search_8hpp.html#ab4243a56a76b7c4e1cc889fe6f390010">binary_search_iterative</a></div><div class="ttdeci">int binary_search_iterative(T element, std::vector&lt; T &gt; vect)</div><div class="ttdoc">Performs a binary search (iteratively) on a vector of sorted (ascending) elements. </div><div class="ttdef"><b>Definition:</b> search.hpp:40</div></div>
+<div class="ttc" id="search_8hpp_html_a9d64e2db5af5663eacdad951af56c867"><div class="ttname"><a href="search_8hpp.html#a9d64e2db5af5663eacdad951af56c867">binary_search_recursive</a></div><div class="ttdeci">int binary_search_recursive(T element, std::vector&lt; T &gt; vect, int left, int right)</div><div class="ttdoc">Performs a binary search (recursively) on a vector of sorted (ascending) elements. </div><div class="ttdef"><b>Definition:</b> search.hpp:82</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 18 2017 03:42:26 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jun 18 2017 11:43:40 for My Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

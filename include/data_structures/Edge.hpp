@@ -42,7 +42,7 @@ template <class T, class M> class Edge: public DataType<T> {
      * @param b Value of second vertex.
      * @param w Weight of edge.
      */
-    Edge(M a, M b, T w);
+    Edge(M a, M b, T weight);
 
     // TODO - USE FIND FROM util::
 
@@ -58,7 +58,7 @@ template <class T, class M> class Edge: public DataType<T> {
 
 //------------------------------------------------------------------------------
 
-template <class T, class M> Edge<T,M>::Edge(M a, M b, T t) {
+template <class T, class M> Edge<T,M>::Edge(M a, M b, T weight) {
   if (a == b) {
     throw std::invalid_argument("Edge<T,M>::Edge(): Verticies u and v are the same: no self referencing edges allowed\n");
   }
@@ -67,7 +67,7 @@ template <class T, class M> Edge<T,M>::Edge(M a, M b, T t) {
   u = new Vertex<M>(a);
   v = new Vertex<M>(b);
 
-  DataType<T>::value = t;
+  DataType<T>::value = weight;
 }
 
 //------------------------------------------------------------------------------
@@ -82,14 +82,14 @@ template <class T, class M> int Edge<T,M>::find(std::vector< Edge<T,M> > edges, 
       break;
     }
   }
-
   return index;
 }
 
 //------------------------------------------------------------------------------
 
 /**
- * @brief
+ * @brief Operator overload of ==
+ * @return True if and only if all instance variables are equal between edge e, and edge f.
  */
 template <class T, class M> bool operator==(const Edge<T,M>& e, const Edge<T,M>& f) {
   return (e.u == f.u) && (e.v == f.v) && (e.DataType<T>::value == f.DataType<T>::value);
@@ -98,9 +98,10 @@ template <class T, class M> bool operator==(const Edge<T,M>& e, const Edge<T,M>&
 //------------------------------------------------------------------------------
 
 /**
- * @brief
+ * @brief Operator overload of !=
+ * @return
  */
-template <class T, class M> bool operator!=(const Edge<T,M>& e, const Edge<T,M>&f) {
+template <class T, class M> bool operator!=(const Edge<T,M>& e, const Edge<T,M>& f) {
   return (e.u != f.u) || (e.v != f.v) || (e.DataType<T>::value != f.DataType<T>::value);
 }
 
