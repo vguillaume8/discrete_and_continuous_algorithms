@@ -1,0 +1,7 @@
+<map id="/home/jabari/discrete_and_continuous_algorithms/include/data_structures/VectorStructure.hpp" name="/home/jabari/discrete_and_continuous_algorithms/include/data_structures/VectorStructure.hpp">
+<area shape="rect" id="node2" href="$_binary_tree_8hpp.html" title="Binary Tree Interface. " alt="" coords="111,126,297,197"/>
+<area shape="rect" id="node6" href="$_stack_8hpp.html" title="Implementation of a vector based stack. " alt="" coords="321,126,508,197"/>
+<area shape="rect" id="node3" href="$_min_heap_8hpp.html" title="Implementation of a min heap / priority queue with higher priority to loweer values. " alt="" coords="5,246,192,317"/>
+<area shape="rect" id="node5" href="$_max_heap_8hpp.html" title="Implementation of a max heap / priority queue with higher priority to larger values. " alt="" coords="216,246,403,317"/>
+<area shape="rect" id="node4" href="$sort_8hpp.html" title="Various sorting algorithms. " alt="" coords="5,365,192,421"/>
+</map>

@@ -1,0 +1,12 @@
+<map id="DataStructure&lt; T &gt;" name="DataStructure&lt; T &gt;">
+<area shape="rect" id="node3" href="$class_binary_search_tree.html" title="BinarySearchTree\&lt; T \&gt;" alt="" coords="5,155,163,181"/>
+<area shape="rect" id="node4" href="$class_indexed_data_structure.html" title="IndexedDataStructure\&lt; T \&gt;" alt="" coords="188,155,369,181"/>
+<area shape="rect" id="node7" href="$class_vector_structure.html" title="VectorStructure\&lt; T \&gt;" alt="" coords="394,155,539,181"/>
+<area shape="rect" id="node2" href="$class_abstract_object.html" title="AbstractObject" alt="" coords="224,5,333,32"/>
+<area shape="rect" id="node5" href="$class_abstract_linked_list.html" title="AbstractLinkedList\&lt; T \&gt;" alt="" coords="197,229,360,256"/>
+<area shape="rect" id="node6" href="$class_linked_list.html" title="LinkedList\&lt; T \&gt;" alt="" coords="222,304,335,331"/>
+<area shape="rect" id="node8" href="$class_binary_tree.html" title="BinaryTree\&lt; T \&gt;" alt="" coords="396,229,512,256"/>
+<area shape="rect" id="node11" href="$class_stack.html" title="Stack\&lt; T \&gt;" alt="" coords="537,229,625,256"/>
+<area shape="rect" id="node9" href="$class_max_heap.html" title="MaxHeap\&lt; T \&gt;" alt="" coords="379,304,489,331"/>
+<area shape="rect" id="node10" href="$class_min_heap.html" title="MinHeap\&lt; T \&gt;" alt="" coords="515,304,621,331"/>
+</map>

@@ -1,5 +1,5 @@
 /**
- * @file Graph.hpp
+ * @file data_structures/Graph.hpp
  * @version 1.0
  * @title Graph
  * @author Jabari Dash

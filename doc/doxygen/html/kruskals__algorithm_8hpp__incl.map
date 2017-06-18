@@ -1,0 +1,8 @@
+<map id="/home/jabari/discrete_and_continuous_algorithms/include/algorithms/kruskals_algorithm.hpp" name="/home/jabari/discrete_and_continuous_algorithms/include/algorithms/kruskals_algorithm.hpp">
+<area shape="rect" id="node4" href="$_graph_8hpp.html" title="Weighted Graph. " alt="" coords="302,126,425,167"/>
+<area shape="rect" id="node6" href="$_edge_8hpp.html" title="Weighted Edge in a weighted Graph. " alt="" coords="248,216,324,243"/>
+<area shape="rect" id="node8" href="$_vertex_8hpp.html" title="Vertex for use in Graphs. " alt="" coords="412,291,497,317"/>
+<area shape="rect" id="node9" href="$_data_type_8hpp.html" title="Base class to be derived by data types that will be used in data structures. " alt="" coords="263,365,367,392"/>
+<area shape="rect" id="node13" href="$_pair_8hpp.html" title="Pair is to be extended by classes such as 2 Dimensional Cartesian (x, y) pairs, or Edges in Graphs..." alt="" coords="102,365,172,392"/>
+<area shape="rect" id="node12" href="$_abstract_object_8hpp.html" title="All classes will inherit from this abstract class. " alt="" coords="247,440,381,467"/>
+</map>

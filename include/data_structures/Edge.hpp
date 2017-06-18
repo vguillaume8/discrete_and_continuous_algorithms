@@ -1,5 +1,5 @@
 /**
- * @file Edge.hpp
+ * @file data_structures/Edge.hpp
  * @version 1.0
  * @title Edge
  * @author Jabari Dash
@@ -88,12 +88,18 @@ template <class T, class M> int Edge<T,M>::find(std::vector< Edge<T,M> > edges, 
 
 //------------------------------------------------------------------------------
 
+/**
+ * @brief
+ */
 template <class T, class M> bool operator==(const Edge<T,M>& e, const Edge<T,M>& f) {
   return (e.u == f.u) && (e.v == f.v) && (e.DataType<T>::value == f.DataType<T>::value);
 }
 
 //------------------------------------------------------------------------------
 
+/**
+ * @brief
+ */
 template <class T, class M> bool operator!=(const Edge<T,M>& e, const Edge<T,M>&f) {
   return (e.u != f.u) || (e.v != f.v) || (e.DataType<T>::value != f.DataType<T>::value);
 }

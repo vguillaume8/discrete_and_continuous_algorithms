@@ -1,0 +1,6 @@
+<map id="/home/jabari/discrete_and_continuous_algorithms/include/data_structures/Edge.hpp" name="/home/jabari/discrete_and_continuous_algorithms/include/data_structures/Edge.hpp">
+<area shape="rect" id="node4" href="$_vertex_8hpp.html" title="Vertex for use in Graphs. " alt="" coords="191,125,276,152"/>
+<area shape="rect" id="node5" href="$_data_type_8hpp.html" title="Base class to be derived by data types that will be used in data structures. " alt="" coords="183,200,287,227"/>
+<area shape="rect" id="node9" href="$_pair_8hpp.html" title="Pair is to be extended by classes such as 2 Dimensional Cartesian (x, y) pairs, or Edges in Graphs..." alt="" coords="329,200,399,227"/>
+<area shape="rect" id="node8" href="$_abstract_object_8hpp.html" title="All classes will inherit from this abstract class. " alt="" coords="167,275,301,301"/>
+</map>

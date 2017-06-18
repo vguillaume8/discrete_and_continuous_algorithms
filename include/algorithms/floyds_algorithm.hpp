@@ -1,3 +1,24 @@
+/**
+ * @file floyds_algorithm.hpp
+ * @version 1.0
+ * @title floyds_algorithm
+ * @author Jabari Dash
+ * @brief Given a weighted, undirected graph, find all shortest paths between all verticies
+ * @date 06/16/2017
+ * @code
+  int main() {
+
+    // Code example
+    std::cout << "Hello World" << std::endl;
+
+    return 0;
+  }
+ * @endcode
+ */
+
+#ifndef FLOYDS_ALGORITHM
+#define FLOYDS_ALGORITHM
+
 #include <vector>
 #include <climits>
 #include <iostream>
@@ -7,19 +28,42 @@
 #include "Vertex.hpp"
 #include "../../include/util/util.hpp"
 
-// TODO - CLEAN UP
-
+/*
+ * @brief Provided a list of edges, this function returns the original adjacency matrix that will be used with Floyd's.
+ * @param graph
+ * @param A
+ * @param P
+ * @param n
+ * @param print_steps Boolean flag that when set true prints all intermediate steps in the algorithm.
+ */
 void shortest_path_floyd(Graph& graph, std::vector< std::vector<int> >& A, std::vector< std::vector<int> >& P, int n, bool print_steps);
+
+/*
+ * @brief Returns the adjacency matrix of shortest paths for all pairs variables Floyd's algorithm.
+ * @param edges List of edges that will be used to build the initial adjacency matrix.
+ * @param A Matrix of size nxn in which the adjacencies will be stored
+ * @param n Number of rows (and columns) in the adjacency matrix
+ */
 void initialize_adjacency_matrix(std::vector<Edge>& edges, std::vector< std::vector<int> >& A, int n);
+
+/**
+ * @brief Displays all shortest paths between each vertex in the graph.
+ * @param A Adjacency matrix
+ * @param P Path matrix
+ * @param n Number of rows (and columns) in the path and adjacency matricies.
+ */
 void display_all_paths_shortest_paths(std::vector< std::vector<int> >& A, std::vector< std::vector<int> >& P, int n);
+
+/*
+ * @brief Recursively displays a path between vertices i and j, non-inclusive.
+ * @param P The matrix that represents all shortest paths between each vertex
+ * @param i Start vertex
+ * @param j End vertex
+ */
 void display_path(std::vector< std::vector<int> >& P, int i, int j);
 
 //------------------------------------------------------------------------------
 
-/*
-* Provided a list of edges, this function returns the original adjacency matrix
-* that will be used with Floyd's
-*/
 void initialize_adjacency_matrix(std::vector<Edge>& edges, std::vector< std::vector<int> >& A, int n) {
 
   /*
@@ -64,15 +108,12 @@ void initialize_adjacency_matrix(std::vector<Edge>& edges, std::vector< std::vec
 
 //------------------------------------------------------------------------------
 
-/*
-Returns the adjacency matrix of shortest paths for all pairs variables
-Floyd's algorithm
-*/
-static void shortest_path_floyd(Graph& graph, std::vector< std::vector<int> >& A, std::vector< std::vector<int> >& P, int n, bool print_steps) {
+void shortest_path_floyd(Graph& graph, std::vector< std::vector<int> >& A, std::vector< std::vector<int> >& P, int n, bool print_steps) {
 
   // Get original adjacncy matrix, θ(N^2)
   initialize_adjacency_matrix(graph.edges, A, n);
 
+  // Print initial adjacency matrix
   if (print_steps == true) {
     printf("A_%i\n", 0);
     util::display_NxN_matrix(A, n, 0);
@@ -95,27 +136,11 @@ static void shortest_path_floyd(Graph& graph, std::vector< std::vector<int> >& A
       }
     }
 
+    // Print adjacency matrix after each kth step (outer most loop)
     if (print_steps == true) {
       printf("A_%i\n", k+1);
       util::display_NxN_matrix(A, n, 0);
     }
-  }
-}
-
-//------------------------------------------------------------------------------
-
-/*
-* Display path between vertices i and j, non-inclusive
-*/
-void display_path(std::vector< std::vector<int> >& P, int i, int j) {
-  int k = P[i][j];
-
-  if (k == -1) {
-    return;
-  } else {
-    display_path(P, i, k);
-    printf("%i, ", k+1);
-    display_path(P, k, j);
   }
 }
 
@@ -135,3 +160,19 @@ static void display_all_paths_shortest_paths(std::vector< std::vector<int> >& A,
     }
   }
 }
+
+//------------------------------------------------------------------------------
+
+void display_path(std::vector< std::vector<int> >& P, int i, int j) {
+  int k = P[i][j];
+
+  if (k == -1) {
+    return;
+  } else {
+    display_path(P, i, k);
+    printf("%i, ", k+1);
+    display_path(P, k, j);
+  }
+}
+
+#endif // FLOYDS_ALGORITHM

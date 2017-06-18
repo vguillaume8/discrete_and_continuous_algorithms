@@ -1,5 +1,5 @@
 /**
- * @file Vertex.hpp
+ * @file data_structures/Vertex.hpp
  * @version 1.0
  * @title Vertex
  * @author Jabari Dash
@@ -37,4 +37,4 @@ template <class T> Vertex<T>::Vertex(T value) {
   DataType<T>::value = value;
 }
 
-#endif
+#endif // VERTEX_H
