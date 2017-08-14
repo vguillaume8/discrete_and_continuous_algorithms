@@ -26,6 +26,7 @@
 #include <sstream>     // std::stringstream
 #include <iterator>    // std::ostream_iterator
 #include <iostream>    // std::cout, std::endl
+#include "../data_structures/LinkedListNode.hpp"
 
 namespace util {
 
@@ -44,6 +45,9 @@ namespace util {
 	 * @return Maximum value between the two arguments.
 	 */
 	template <typename T> T max(T a, T b);
+
+	// TODO - Add comments
+	template <typename T> T max(std::vector<T>& vect);
 
 	/**
 	 * @brief Returns the minimum value between two values of the same type.
@@ -80,7 +84,10 @@ namespace util {
 	 * @brief Prints a vector to the console.
 	 * @param vect Vector to be printed.
 	 */
-	template <typename T> void display(std::vector<T> vect);
+	template <typename T> void display(std::vector<T>& vect);
+
+	// TODO - COMMENT
+	template <typename T> void display_matrix(std::vector< std::vector<T> > matrix);
 
 	/**
 	 * @brief Converts a vector to a string (ordering preserved).
@@ -100,6 +107,18 @@ namespace util {
 	 * @param vect Vector to be printed.
 	 */
 	template <typename T> void print(std::vector<T> vect);
+
+	/**
+	 * @brief Prints a LinekdList to the console.
+	 * @param vect LinkedList head to be printed.
+	 */
+	template <typename T> void print(LinkedListNode<T>* head);
+
+	/**
+	 * @brief Prints a LinkedList to the console on new line.
+	 * @param vect LinkedList head to be printed.
+	 */
+	template <typename T> void println(LinkedListNode<T>* head);
 
 	/**
 	 * @brief Prints a value to the console with a new line.
@@ -127,6 +146,21 @@ namespace util {
 	  } else {
 	    return b;
 	  }
+	}
+
+//------------------------------------------------------------------------------
+
+	template <typename T> T max(std::vector<T>& vect) {
+		int size = vect.size();
+		int max = 0;
+
+		for (int i = 0; i < size; i++) {
+			if (vect[i] > vect[max]) {
+				max = i;
+			}
+		}
+
+		return max;
 	}
 
 //------------------------------------------------------------------------------
@@ -207,7 +241,7 @@ namespace util {
 
 //------------------------------------------------------------------------------
 
-	template <typename T> void display(std::vector<T>  vect) {
+	template <typename T> void display(std::vector<T>&  vect) {
 		int i;
 		int n = vect.size();
 
@@ -216,6 +250,16 @@ namespace util {
 		}
 
 		std::cout << std::endl;
+	}
+
+//------------------------------------------------------------------------------
+
+	template <typename T> void display_matrix(std::vector< std::vector<T> > matrix) {
+	  int size = matrix.size();
+
+	  for (int i =  0; i < size; i++) {
+	    display(matrix[i]);
+	  }
 	}
 
 //------------------------------------------------------------------------------
@@ -247,6 +291,28 @@ namespace util {
 	template <typename T> void print(std::vector<T> vect) {
 		display(vect);
 	}
+
+//------------------------------------------------------------------------------
+
+	template <typename T> void print(LinkedListNode<T>* head) {
+		while(head != NULL) {
+	    util::print(head->to_string() + " -> ");
+	    head = head->next;
+	  }
+
+		util::print("NULL");
+	}
+
+//------------------------------------------------------------------------------
+
+		template <typename T> void println(LinkedListNode<T>* head) {
+			while(head != NULL) {
+		    util::print(head->to_string() + " -> ");
+		    head = head->next;
+		  }
+
+			util::print("NULL\n");
+		}
 
 //------------------------------------------------------------------------------
 

@@ -23,6 +23,7 @@
 #include <string>                   // std::string
 #include <stdexcept>                // std::out_of_range
 #include "AbstractLinkedList.hpp"   // AbstractLinkedList<T>
+#include "LinkedListNode.hpp"
 #include "../util/util.hpp"         // util::to_string(std::vector<T>)
 
 template <class T> class LinkedList: public AbstractLinkedList<T> {
@@ -112,6 +113,12 @@ template <class T> class LinkedList: public AbstractLinkedList<T> {
      * @return The desired element from the provided index.
      */
     T get(int index);
+
+    /**
+     * @brief Returns pointer to head node
+     * @return head
+     */
+     LinkedListNode<T>* get_head();
 
     /**
      * @brief insert Inserts the element at the specified index.
@@ -307,6 +314,12 @@ template <class T> T LinkedList<T>::get(int index) {
 
   return node->get_value();
 
+}
+
+//------------------------------------------------------------------------------
+
+template <class T> LinkedListNode<T>* LinkedList<T>::get_head() {
+  return this->head;
 }
 
 //------------------------------------------------------------------------------

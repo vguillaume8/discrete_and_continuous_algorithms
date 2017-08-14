@@ -38,6 +38,13 @@ template <class T> class sort {
     void static bubble_sort_optimized(std::vector<T>& vect);
 
     /**
+     * @brief Sorts a vector in ascending order via Counting Sort
+     * NOT WORKING
+     * @param vect Vector to be sorted.
+     */
+    void static counting_sort_positive(std::vector<T>& vect);
+
+    /**
      * @bried Sorts a vector in ascending order via Heap Sort
      * @param vect Vector to be sorted.
      */
@@ -113,11 +120,50 @@ template <class T> void sort<T>::bubble_sort_optimized(std::vector<T>& a) {
 
 //------------------------------------------------------------------------------
 
+template <class T> void sort<T>::counting_sort_positive(std::vector<T>& vect) {
+  // TODO - IMPLEMENT CORRECTLY
+
+  std::vector<T> output(vect.size());
+  std::vector<T> count(vect[util::max(vect)] + 1);
+
+  // 1. Initialize count vector
+  for (int i = 0; i < vect.size(); i++) {
+    std::cout << i << ": " <<count[vect[i]] << "->";
+    count[vect[i]]++;
+    std::cout << count[vect[i]] << "\n";
+  }
+
+  // 2. Add previous count to each ith count
+  // For hashing purposes
+  for (int i = 0; i < count.size()-1; i++) {
+    count[i+1] += count[i];
+  }
+
+  // 3. Place values into correct spots
+  for (int i = 0; i < vect.size(); i++) {
+    output[count[vect[i]]] = vect[i];
+    count[vect[i]]--;
+  }
+
+  std::cout << "\n\n";
+  util::display(vect);
+  util::display(count);
+  util::display(output);
+  std::cout << "\n\n";
+
+  // 4. Copy back into original array
+  // for (int i = 0; vect[i]; ++i) {
+  //   vect[i] = output[i];
+  // }
+}
+
+//------------------------------------------------------------------------------
+
 template <class T> void sort<T>::heap_sort(std::vector<T>& array) {
   int size = array.size();
   MinHeap<T> heap;
 
-  // Build heap
+  // Build heap O(n*log n)
   for (int i = 0; i < size; i++) {
     heap.insert(array[i]);
   }

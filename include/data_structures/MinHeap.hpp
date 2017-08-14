@@ -3,7 +3,7 @@
  * @version 1.0
  * @title MinHeap
  * @author Jabari Dash
- * @brief Implementation of a min heap / priority queue with higher priority to loweer values.
+ * @brief Implementation of a min heap / priority queue with higher priority to lower values.
  * @date 05/31/2017
  * @code
   int main() {
