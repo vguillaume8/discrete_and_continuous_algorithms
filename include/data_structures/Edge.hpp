@@ -47,7 +47,7 @@ template <class T, class M> class Edge: public DataType<T> {
     // TODO - USE FIND FROM util::
 
     /**
-     * @brief Provided a vector of verticies, finds am edge that connects two specified verticies.
+     * @brief Provided a vector of verticies, finds an edge that connects two specified verticies.
      * @param edges Vector of edges to search from.
      * @param u First vertex.
      * @param v Second vertex.

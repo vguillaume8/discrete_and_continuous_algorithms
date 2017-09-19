@@ -54,14 +54,14 @@ template <class T> class Stack: public VectorStructure<T> {
      * @param element Specified element.
      * @return Boolean value that indicates whether or not the operation was successful.
      */
-    bool insert(T element);
+    bool insert(T element) override;
 
     /**
      * @brief
      * @param
      * @return
      */
-    bool remove(T element);
+    bool remove(T element) override;
 
   protected:
 
@@ -79,7 +79,7 @@ template <class T> class Stack: public VectorStructure<T> {
      * @brief Removes and returns the element at the top of the stack.
      * @return Boolean value that indicates whether or not the operation was successful.
      */
-    T poll();
+    T poll() override;
 
   private:
 };

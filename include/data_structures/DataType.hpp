@@ -25,6 +25,8 @@
 
 template <class T> class DataType: public AbstractObject {
   public:
+    /** @brief The value of the data. Example, for DataType<int>, value is an integer. */
+    T value;
 
     /**
      * @brief Gives the value of the object back.
@@ -47,8 +49,7 @@ template <class T> class DataType: public AbstractObject {
 
   protected:
 
-    /** @brief The value of the data. Example, for DataType<int>, value is an integer. */
-    T value;
+
 };
 
 //------------------------------------------------------------------------------
